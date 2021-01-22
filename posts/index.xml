@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>CC BY 4.0 CN</copyright>
-    <lastBuildDate>Thu, 21 Jan 2021 20:15:07 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 04 Mar 2021 21:28:10 +0800</lastBuildDate>
     
         <atom:link href="https://equalkirby.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Add Two Numbers</title>
+      <link>https://equalkirby.github.io/2021/03/add-two-numbers/</link>
+      <pubDate>Thu, 04 Mar 2021 21:28:10 +0800</pubDate>
+      
+      <guid>https://equalkirby.github.io/2021/03/add-two-numbers/</guid>
+      <description>&lt;p&gt;感覺該來開始刷題了&lt;br&gt;
+總之這個是第一篇吧&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>First Post</title>

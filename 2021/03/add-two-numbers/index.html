@@ -2,7 +2,8 @@
 <html lang="en">
   <head>
     <title>
-        EqualKirby&#39;s Note</title>
+        Add Two Numbers - EqualKirby&#39;s Note
+      </title>
         <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport"
@@ -19,25 +20,38 @@
     <meta http-equiv="window-target" content="_top" />
     
     
-    
+    <meta name="description" content="感覺該來開始刷題了
+總之這個是第一篇吧
+" />
     <meta name="generator" content="Hugo 0.80.0 with theme pure" />
-    <title>EqualKirby&#39;s Note</title>
+    <title>Add Two Numbers - EqualKirby&#39;s Note</title>
     
     
     <link rel="stylesheet" href="https://equalkirby.github.io/css/style.min.5743fa7b2206cb1eb1d7532cda60d1ebf1e3ae4aac4077fc182a92c911e04e02.css">
     
     <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
-    <meta property="og:title" content="404 Page not found" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://equalkirby.github.io/404.html" />
+    <meta property="og:title" content="Add Two Numbers" />
+<meta property="og:description" content="感覺該來開始刷題了
+總之這個是第一篇吧" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://equalkirby.github.io/2021/03/add-two-numbers/" />
+<meta property="article:published_time" content="2021-03-04T21:28:10+08:00" />
+<meta property="article:modified_time" content="2021-03-04T21:28:10+08:00" />
+<meta itemprop="name" content="Add Two Numbers">
+<meta itemprop="description" content="感覺該來開始刷題了
+總之這個是第一篇吧">
+<meta itemprop="datePublished" content="2021-03-04T21:28:10+08:00" />
+<meta itemprop="dateModified" content="2021-03-04T21:28:10+08:00" />
+<meta itemprop="wordCount" content="415">
 
-<meta itemprop="name" content="404 Page not found">
-<meta itemprop="description" content="">
+
+
+<meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="404 Page not found"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="Add Two Numbers"/>
+<meta name="twitter:description" content="感覺該來開始刷題了
+總之這個是第一篇吧"/>
 
     <!--[if lte IE 9]>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -194,33 +208,116 @@
 
     
     
-<main class="main" role="main">
-    <div class="content">
-        <article class="article">
-            <div class="article-header">
-                <h1 class="article-title" itemprop="name">
-                    <a href="#">404 Not Found</a>
-                </h1>
-            </div>
-            <div class="article-meta">
-                
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">Catalogue</h4>
+    <nav id="toc" class="js-toc toc">
 
-                <span class="post-comment"><i class="icon icon-comment"></i> <a href="/404.html#comments"
-                        class="article-comment-link">Comments</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 0 words</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Time: 0 minutes </span>
-            </div>
-            <div class="article-entry marked-body" itemprop="articleBody">
-                <br>
-                <p>The page you are looking for might have been removed, had its name changed or is temporarily unavailable.</p>
-                <a href="/">Go Back</a>
-            </div>
-            <div class="article-footer">
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2021/03/add-two-numbers/"
+    >Add Two Numbers</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://equalkirby.github.io/2021/03/add-two-numbers/" class="article-date">
+  <time datetime="2021-03-04 21:28:10 &#43;0800 CST" itemprop="datePublished">2021-03-04</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/leetcode/"> LeetCode </a>
+</span>
+
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 415 words</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Time: 1 minutes </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p>感覺該來開始刷題了<br>
+總之這個是第一篇吧</p>
+<h2 id="題目連結httpsleetcodecomproblemsadd-two-numbers"><a href="https://leetcode.com/problems/add-two-numbers/">題目連結</a></h2>
+<h2 id="想法">想法</h2>
+<p>這題其實蠻簡單的，簡單來說就是用 linked list 進行兩個數字的加法<br>
+預先給的格式其實也已經很貼心的把數字倒序，所以就利用 carry flag 從後面往前加就好</p>
+<p>實作時比較需要注意的幾點：</p>
+<ul>
+<li>題目有保證兩個傳進來的 pointer 非空，但兩個 linked list 可能不等長</li>
+<li>即使兩個 pointer 都跑到 nullptr 了，carry flag還有可能沒跑完</li>
+<li>對於第一個要被創出來的 Node 要怎樣寫比較統一</li>
+</ul>
+<p>底下的 code 算是盡量比較統一的寫法</p>
+<p>存了一個 dummy node 在 stack 上，實際上要傳回去第一個 node 是 head.next</p>
+<p>實際上我用 <code>seq[]</code> 只是因為我很討厭打一樣的 code 打兩次而已<br>
+因為我沒辦法一次寫過要修修改改，所以有兩個地方出現一樣的 code 我很容易打錯QQ</p>
+<h2 id="時間複雜度">時間複雜度</h2>
+<p>顯而易見的 $\mathcal{O}(n)$</p>
+<h2 id="空間複雜度">空間複雜度</h2>
+<p>顯而易見的 $\mathcal{O}(n)$</p>
+<pre><code class="language-C++">/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+#include&lt;algorithm&gt;
+
+class Solution {
+public:
+    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+        using namespace std;
+        
+        auto head = ListNode();
+        auto prev = &amp;head;
+        auto carry = 0;
+        
+        ListNode* seq[] = {l1, l2};
+        
+        while(any_of(begin(seq), end(seq), [](auto p){return p;}) || carry) {
+            auto sum = carry;
+            for(auto&amp; p : seq)
+            {
+                if(p) {
+                    sum += p-&gt;val;
+                    p = p-&gt;next;
+                }
+            }
+            
+            carry = sum / 10;
+            
+            auto cur = new ListNode(sum % 10);            
+            prev-&gt;next = cur;
+            prev = cur;
+        }
+        
+        return head.next;
+    }
+};
+</code></pre>
+    </div>
+    <div class="article-footer">
 <blockquote class="mt-2x">
   <ul class="post-copyright list-unstyled">
     <li class="post-copyright-link hidden-xs">
       <strong>Permalink: </strong>
-      <a href="https://equalkirby.github.io/404.html" title="404 Page not found" target="_blank" rel="external">https://equalkirby.github.io/404.html</a>
+      <a href="https://equalkirby.github.io/2021/03/add-two-numbers/" title="Add Two Numbers" target="_blank" rel="external">https://equalkirby.github.io/2021/03/add-two-numbers/</a>
     </li>
     <li class="post-copyright-license">
       <strong>License: </strong>
@@ -245,12 +342,33 @@
   </div>
 </div>
 
-            </div>
-        </article>
-<section id="comments">
-</section>
-
     </div>
+  </article>
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://equalkirby.github.io/2021/01/first-post/" title="First Post"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="Catalogue" role="button">
+                    <span>[&nbsp;</span><span>Catalogue</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bar-right">
+        </div>
+    </div>
+</nav>
+
+
 </main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
   <div class="copyright">
     &copy;&lt;nil&gt;  -
@@ -319,6 +437,7 @@
         hasInnerContainers: true,
     });
 </script>
+
 
   </body>
 </html>
