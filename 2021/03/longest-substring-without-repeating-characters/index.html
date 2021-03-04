@@ -2,7 +2,8 @@
 <html lang="en">
   <head>
     <title>
-        EqualKirby&#39;s Note</title>
+        Longest Substring Without Repeating Characters - EqualKirby&#39;s Note
+      </title>
         <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport"
@@ -19,25 +20,34 @@
     <meta http-equiv="window-target" content="_top" />
     
     
-    
+    <meta name="description" content="刷題第二篇
+" />
     <meta name="generator" content="Hugo 0.80.0 with theme pure" />
-    <title>EqualKirby&#39;s Note</title>
+    <title>Longest Substring Without Repeating Characters - EqualKirby&#39;s Note</title>
     
     
     <link rel="stylesheet" href="https://equalkirby.github.io/css/style.min.5743fa7b2206cb1eb1d7532cda60d1ebf1e3ae4aac4077fc182a92c911e04e02.css">
     
     <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
-    <meta property="og:title" content="404 Page not found" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://equalkirby.github.io/404.html" />
+    <meta property="og:title" content="Longest Substring Without Repeating Characters" />
+<meta property="og:description" content="刷題第二篇" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://equalkirby.github.io/2021/03/longest-substring-without-repeating-characters/" />
+<meta property="article:published_time" content="2021-03-04T22:28:03+08:00" />
+<meta property="article:modified_time" content="2021-03-04T22:28:03+08:00" />
+<meta itemprop="name" content="Longest Substring Without Repeating Characters">
+<meta itemprop="description" content="刷題第二篇">
+<meta itemprop="datePublished" content="2021-03-04T22:28:03+08:00" />
+<meta itemprop="dateModified" content="2021-03-04T22:28:03+08:00" />
+<meta itemprop="wordCount" content="848">
 
-<meta itemprop="name" content="404 Page not found">
-<meta itemprop="description" content="">
+
+
+<meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="404 Page not found"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="Longest Substring Without Repeating Characters"/>
+<meta name="twitter:description" content="刷題第二篇"/>
 
     <!--[if lte IE 9]>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -204,33 +214,118 @@
 
     
     
-<main class="main" role="main">
-    <div class="content">
-        <article class="article">
-            <div class="article-header">
-                <h1 class="article-title" itemprop="name">
-                    <a href="#">404 Not Found</a>
-                </h1>
-            </div>
-            <div class="article-meta">
-                
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">Catalogue</h4>
+    <nav id="toc" class="js-toc toc">
 
-                <span class="post-comment"><i class="icon icon-comment"></i> <a href="/404.html#comments"
-                        class="article-comment-link">Comments</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 0 words</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Time: 0 minutes </span>
-            </div>
-            <div class="article-entry marked-body" itemprop="articleBody">
-                <br>
-                <p>The page you are looking for might have been removed, had its name changed or is temporarily unavailable.</p>
-                <a href="/">Go Back</a>
-            </div>
-            <div class="article-footer">
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2021/03/longest-substring-without-repeating-characters/"
+    >Longest Substring Without Repeating Characters</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://equalkirby.github.io/2021/03/longest-substring-without-repeating-characters/" class="article-date">
+  <time datetime="2021-03-04 22:28:03 &#43;0800 CST" itemprop="datePublished">2021-03-04</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/leetcode/"> LeetCode </a>
+</span>
+
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 848 words</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Time: 2 minutes </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p>刷題第二篇</p>
+<h2 id="題目連結httpsleetcodecomproblemslongest-substring-without-repeating-characters"><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/">題目連結</a></h2>
+<h2 id="想法">想法</h2>
+<p>令輸入的字串為 $Str$，$S_i$ 是從 index $i$ 開始的最長且不重複的子字串<br>
+這樣的話，原先的問題就是求 $max(len(S_0), len(S_1), len(S_2),\dots, len(S_{len(Str)-1}))$</p>
+<p>假設 $S_i$ 這個子字串就是 $Str[i, j)$，那麼只有可能是兩種情況：</p>
+<ol>
+<li>$j = len(Str)$</li>
+<li>$j \lt len(Str)$ 且 $\exists k \in [i, j), Str[k] = Str[j]$<br>
+若否，會與 $S_i $定義矛盾</li>
+</ol>
+<p>因此，我們就知道 $S_i$ 怎麼求了：針對每個 $S_i$ 都有個 index 從 $i$ 往後跑一次，檢查到如果有相同的字元就停止，即可得到 $j$<br>
+記錄有沒有相同的字元可以簡單地利用 table，因為題目有說可能出現的字元就是英文、數字和符號，那我就偷懶一點，假設他是 ASCII 囉</p>
+<blockquote>
+<p><code>char</code> 是不是 signed 並沒有被規定，更為嚴謹的方式是將其當 index 用之前要先轉到 unsigned</p>
+</blockquote>
+<p>但其實再仔細觀察，會發現針對上面說的第二種情況，可以得到：</p>
+<p>$max(len(S_{i+1}), len(S_{i+2}), len(S_{i+3}),\dots, len(S_k)) \le len(S_i)$</p>
+<p>要證明也很簡單，上述不等式左側裡面的任一個子字串，其起始 index 皆比 $i$ 大，但右端點(半開區間)都是 index $j$<br>
+因此，其區間必然內嵌於 $[i, j)$ 裡面，長度自然不會超過 $len(S_i)$ (若否，會與 $S_i $定義矛盾)<br>
+那麼，我們就可以跳過 $S_{i+1}, S_{i+2}, S_{i+3},\dots, S_k$ 的計算，而是直接往下求 $S_{k+1}$</p>
+<p>而且，index $j$ 也不需要往回設定從 $k+1$ 開始，因為上一次的 $S_i$ 保證了 $Str[i, j)$ 裡面沒有重複的字元<br>
+已知 $Str[k] = Str[j]$ 且 $k \in [i, j)$，$Str[k+1, j]$ 自然不會有重複的字元(不然會矛盾)</p>
+<p>因此，這個問題實際上就可以變成所謂的 sliding window<br>
+利用兩個 pointer 維護子字串的起點 $start$ 與終點 $end$，並確保起點到終點之間是沒有重複的字元<br>
+在過程中持續監視子字串的長度，並且將最大值記錄下來，那就會是答案了</p>
+<p>剩下的問題只剩下怎樣有效率地知道 $k$ 是多少？<br>
+我們可以將前面的 table 從記錄字元出現的有無，變成記錄看到 $end$ 為止，上一次該字元出現的 index<br>
+如果該 index 是大於等於 $start$，那就表示目前檢查的字元與 sliding window 內的字元有所重複</p>
+<h2 id="時間複雜度">時間複雜度</h2>
+<p>可以觀察到 sliding window 有這幾個特性：</p>
+<ul>
+<li>$start \le end$</li>
+<li>$start$ 只會停留或是往右走</li>
+<li>$end$ 只會停留或是往右走</li>
+<li>任何一次更新，$start$ 和 $end$ 之中一定至少有一個往右走</li>
+</ul>
+<p>因此 $start$ 與 $end$ 最多就是各走 n 步，得到 $\mathcal{O}(n)$</p>
+<h2 id="空間複雜度">空間複雜度</h2>
+<p>顯而易見的 $\mathcal{O}(1)$</p>
+<h2 id="程式碼">程式碼</h2>
+<pre><code class="language-C++">#include&lt;algorithm&gt;
+
+class Solution {
+public:
+    int lengthOfLongestSubstring(string s) {
+        using namespace std;
+        
+        int loc[256];
+        fill(begin(loc), end(loc), -1);
+        
+        auto start = 0;
+        auto len = 0;
+        for(auto i = 0; i &lt; s.size(); i++) {            
+            if(loc[s[i]] &gt;= start) {                
+                start = loc[s[i]] + 1;
+            } else {
+                len = max(len, i - start + 1);
+            }
+            loc[s[i]] = i;
+        }
+            
+        return len;
+    }
+};
+</code></pre>
+    </div>
+    <div class="article-footer">
 <blockquote class="mt-2x">
   <ul class="post-copyright list-unstyled">
     <li class="post-copyright-link hidden-xs">
       <strong>Permalink: </strong>
-      <a href="https://equalkirby.github.io/404.html" title="404 Page not found" target="_blank" rel="external">https://equalkirby.github.io/404.html</a>
+      <a href="https://equalkirby.github.io/2021/03/longest-substring-without-repeating-characters/" title="Longest Substring Without Repeating Characters" target="_blank" rel="external">https://equalkirby.github.io/2021/03/longest-substring-without-repeating-characters/</a>
     </li>
     <li class="post-copyright-license">
       <strong>License: </strong>
@@ -255,12 +350,33 @@
   </div>
 </div>
 
-            </div>
-        </article>
-<section id="comments">
-</section>
-
     </div>
+  </article>
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://equalkirby.github.io/2021/03/add-two-numbers/" title="Add Two Numbers"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="Catalogue" role="button">
+                    <span>[&nbsp;</span><span>Catalogue</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bar-right">
+        </div>
+    </div>
+</nav>
+
+
 </main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
   <div class="copyright">
     &copy;&lt;nil&gt;  -
@@ -329,6 +445,7 @@
         hasInnerContainers: true,
     });
 </script>
+
 
   </body>
 </html>
