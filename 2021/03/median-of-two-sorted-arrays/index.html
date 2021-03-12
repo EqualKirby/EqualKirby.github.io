@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <title>
-        About - EqualKirby&#39;s Note
+        Median of Two Sorted Arrays - EqualKirby&#39;s Note
       </title>
         <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -20,33 +20,38 @@
     <meta http-equiv="window-target" content="_top" />
     
     
-    <meta name="description" content="Hugo, the world’s fastest framework for building websites" />
+    <meta name="description" content="花了好幾天的第三篇
+我好像很久以前就卡這題，但也一直沒把這題放在心上去解，就這樣拖延了好幾年&amp;hellip;
+" />
     <meta name="generator" content="Hugo 0.80.0 with theme pure" />
-    <title>About - EqualKirby&#39;s Note</title>
+    <title>Median of Two Sorted Arrays - EqualKirby&#39;s Note</title>
     
     
     <link rel="stylesheet" href="https://equalkirby.github.io/css/style.min.5743fa7b2206cb1eb1d7532cda60d1ebf1e3ae4aac4077fc182a92c911e04e02.css">
     
     <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
-    <meta property="og:title" content="About" />
-<meta property="og:description" content="Hugo, the world’s fastest framework for building websites" />
+    <meta property="og:title" content="Median of Two Sorted Arrays" />
+<meta property="og:description" content="花了好幾天的第三篇
+我好像很久以前就卡這題，但也一直沒把這題放在心上去解，就這樣拖延了好幾年&hellip;" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://equalkirby.github.io/about/" />
-<meta property="article:published_time" content="2019-02-28T00:00:00+00:00" />
-<meta property="article:modified_time" content="2019-02-28T00:00:00+00:00" />
-<meta itemprop="name" content="About">
-<meta itemprop="description" content="Hugo, the world’s fastest framework for building websites">
-<meta itemprop="datePublished" content="2019-02-28T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2019-02-28T00:00:00+00:00" />
-<meta itemprop="wordCount" content="148">
+<meta property="og:url" content="https://equalkirby.github.io/2021/03/median-of-two-sorted-arrays/" />
+<meta property="article:published_time" content="2021-03-12T19:54:20+08:00" />
+<meta property="article:modified_time" content="2021-03-12T19:54:20+08:00" />
+<meta itemprop="name" content="Median of Two Sorted Arrays">
+<meta itemprop="description" content="花了好幾天的第三篇
+我好像很久以前就卡這題，但也一直沒把這題放在心上去解，就這樣拖延了好幾年&hellip;">
+<meta itemprop="datePublished" content="2021-03-12T19:54:20+08:00" />
+<meta itemprop="dateModified" content="2021-03-12T19:54:20+08:00" />
+<meta itemprop="wordCount" content="2424">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="About"/>
-<meta name="twitter:description" content="Hugo, the world’s fastest framework for building websites"/>
+<meta name="twitter:title" content="Median of Two Sorted Arrays"/>
+<meta name="twitter:description" content="花了好幾天的第三篇
+我好像很久以前就卡這題，但也一直沒把這題放在心上去解，就這樣拖延了好幾年&hellip;"/>
 
     <!--[if lte IE 9]>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -239,8 +244,8 @@
       <h1 itemprop="name">
   <a
     class="article-title"
-    href="/about/"
-    >About</a
+    href="/2021/03/median-of-two-sorted-arrays/"
+    >Median of Two Sorted Arrays</a
   >
 </h1>
 
@@ -248,38 +253,214 @@
         
 <span class="article-date">
   <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://equalkirby.github.io/about/" class="article-date">
-  <time datetime="2019-02-28 00:00:00 &#43;0000 UTC" itemprop="datePublished">2019-02-28</time>
+<a href="https://equalkirby.github.io/2021/03/median-of-two-sorted-arrays/" class="article-date">
+  <time datetime="2021-03-12 19:54:20 &#43;0800 CST" itemprop="datePublished">2021-03-12</time>
 </a>
 </span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/leetcode/"> LeetCode </a>
+</span>
 
-
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 148 words</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Time: 1 minutes </span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 2424 words</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Time: 5 minutes </span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
-      <p>Written in Go, Hugo is an open source static site generator available under the <a href="https://github.com/gohugoio/hugo/blob/master/LICENSE">Apache Licence 2.0.</a> Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.</p>
-<p>Hugo makes use of a variety of open source projects including:</p>
+      <p>花了好幾天的第三篇</p>
+<p>我好像很久以前就卡這題，但也一直沒把這題放在心上去解，就這樣拖延了好幾年&hellip;</p>
+<h2 id="題目連結httpsleetcodecomproblemsmedian-of-two-sorted-arrays"><a href="https://leetcode.com/problems/median-of-two-sorted-arrays/">題目連結</a></h2>
+<h2 id="想法">想法</h2>
+<p>基本上時間複雜度 $\mathcal{O}(m+n)$ 的方式可以說是顯而易見，
+利用 merge 的方式合併兩個陣列，接著根據長度取出中間的元素傳回就好，非常簡單。</p>
+<p>問題主要出在，怎麼樣讓時間複雜度是 $\mathcal{O}(log(m+n))$ 呢？
+提到中位數，又要對數的時間複雜度，不難聯想應該這題與二分搜有關係，
+在此列上四個參考網址，我認為看完以後應該就可以明白怎麼做到的了，
+此文就大致上給個想法方向，跟一些細節的提點就可以了。</p>
+<h4 id="關於二分搜的區間跟延伸httpswwwzhihucomquestion36132386"><a href="https://www.zhihu.com/question/36132386">關於二分搜的區間跟延伸</a></h4>
+<p>這篇的話，我個人覺得前幾個回復都值得一看。
+最佳回答主要琢磨於正確性，底下有個回答有介紹全閉跟左閉右開區間寫法的異同，
+並且延伸到譬如找到滿足條件的第一個元素或是最後一個元素之類的，
+算是幫助複習二分搜的各種寫法與延伸。</p>
+<h4 id="leetcode-上最多人給好評的解答httpsleetcodecomproblemsmedian-of-two-sorted-arraysdiscuss2481share-my-ologminmn-solution-with-explanation"><a href="https://leetcode.com/problems/median-of-two-sorted-arrays/discuss/2481/Share-my-O(log(min(mn)))-solution-with-explanation">LeetCode 上最多人給好評的解答</a></h4>
+<p>此文即是我主要參考的實作。
+評論中有一個 <code>More intuitive thinking process</code> 的回覆也很值得一看，補充了一些原文沒有說明得很清楚的細節。</p>
+<p>首先的問題是，到底要怎麼在兩個已經排序的陣列中找到中位數？
+原文給出，其實把中位數想成以下這樣，就可以比較簡單地解決問題：</p>
+<blockquote>
+<p>dividing a set into two equal length subsets, that one subset is always greater than the other</p>
+</blockquote>
+<p>假設現在只有一個陣列，可以想像成要用一根棍子將陣列分成兩邊(棍子只能放在數字與數字間)。</p>
+<p>如果陣列長度是：</p>
 <ul>
-<li><a href="https://github.com/russross/blackfriday">https://github.com/russross/blackfriday</a></li>
-<li><a href="https://github.com/alecthomas/chroma">https://github.com/alecthomas/chroma</a></li>
-<li><a href="https://github.com/muesli/smartcrop">https://github.com/muesli/smartcrop</a></li>
-<li><a href="https://github.com/spf13/cobra">https://github.com/spf13/cobra</a></li>
-<li><a href="https://github.com/spf13/viper">https://github.com/spf13/viper</a></li>
+<li>奇數：那就讓左邊比右邊多一個元素，中位數就是棍子左邊的數字</li>
+<li>偶數：就讓兩邊有一樣多的元素，中位數就是棍子左右兩側的數字取平均</li>
 </ul>
-<p>Hugo is ideal for blogs, corporate websites, creative portfolios, online magazines, single page applications or even a website with thousands of pages.</p>
-<p>Hugo is for people who want to hand code their own website without worrying about setting up complicated runtimes, dependencies and databases.</p>
-<p>Websites built with Hugo are extremelly fast, secure and can be deployed anywhere including, AWS, GitHub Pages, Heroku, Netlify and any other hosting provider.</p>
-<p>Learn more and contribute on <a href="https://github.com/gohugoio">GitHub</a>.</p>
-
+<p>這也是說明為何程式碼中的 <code>half_len</code> 裡面會有 <code>+1</code> 的緣故。</p>
+<pre><code>array:         1   2   3   4   5  
+sitck_place: _   _   _   |   _   _
+stick_index: 0   1   2   3   4   5
+</code></pre>
+<p>以這個例子來說，陣列裡面有五個數字，
+根據上面的規則，我們棍子要放在能讓元素個數是左三右二的狀況。
+所有能放棍子的位置(stick_place)已用底線標示出來，並且由左至右編號(stick_index)，
+顯然地，棍子擺在3號位置就可以滿足我們的條件。</p>
+<hr>
+<p>那延伸到兩個陣列的話，其實就是我們要在兩個陣列裡面各找一根棍子，
+這兩根棍子要滿足底下的條件：</p>
+<ul>
+<li>
+<p>如果兩個陣列的總和長度為：</p>
+<ul>
+<li>奇數：兩根棍子左側的元素個數要比兩根棍子右側的元素個數多一個元素</li>
+<li>偶數：兩根棍子的左右側元素個數要相等</li>
+</ul>
+</li>
+<li>
+<p>兩根棍子的左側元素，全部要小於等於兩根棍子的右側元素</p>
+<ul>
+<li>因為兩個陣列都是排序過，所以其實可以看成是兩根棍子各自左邊的元素取較大的那個數，要小於等於兩根棍子各自右邊的元素取較小的那個數</li>
+</ul>
+</li>
+</ul>
+<p>這邊的話，因為原文有例子與數學定義，就不再具體說明。</p>
+<hr>
+<p>那問題變成要怎麼找兩根棍子的位置呢？</p>
+<p>其實，因為要求棍子左右兩邊的元素個數要相等(或左邊比右邊多一個)。
+連帶地，一旦決定一個陣列中棍子的位置以後，就可以確定另一個陣列中棍子要擺哪。</p>
+<p>但，對於較長的陣列並不是每個位置都可以擺棍子的。
+譬如說兩個陣列的長度分別為 7 和 1，那麼如果在較長的陣列裡面把棍子擺在最左側，
+顯然在較短的陣列裡面，棍子怎麼擺都沒辦法滿足我們上面說的第一個關於長度的條件。</p>
+<p>相對地，較短的陣列裡面每個位置都可以擺棍子，
+可以看原文裡面的 <code>ps.2</code>，有簡單說明怎麼證明這件事情。</p>
+<hr>
+<p>再來，我們就可以在較短的陣列裡面，針對每個可以擺的位置進行二分搜檢查條件是否成立。
+至於這邊要怎麼樣檢查邊界條件與進行比較，可以直接參考原文(某些邊界條件會自動隱含其他條件，這部分的推導原文中也有)。</p>
+<p>不過，棍子有可能會因為被擺在最左側或是最右側，導致左側或是右側沒有元素。
+但因為原題目有規定 $m+n \ge 1$，所以兩根棍子的左側必定至少有一個元素，但右側可能沒有任何元素。</p>
+<h4 id="拓展到-kth-的解法httpszhang-xiao-mublog20180907median_of_two_sorted_arrays"><a href="https://zhang-xiao-mu.blog/2018/09/07/median_of_two_sorted_arrays/">拓展到 kth 的解法</a></h4>
+<p>這個解法就是看程式碼會有點不知道在搞甚麼，不過還好內文有舉例跟證明。</p>
+<p>假設現在有兩個陣列 $A, B$，其大小分別為 $5, 3$，
+因此我們要取中位數，即是計算第 4 小($k = (5+3) / 2 = 4$)的元素。
+做法是去兩個陣列各自檢查其第 2 小($k / 2 = 4 / 2 = 2$)的元素，接著我們有以下兩種 case 討論(zero-based index)：</p>
+<ol>
+<li>
+<p>$A[1] &lt; B[1]$
+這表示我們可以捨去 $A$ 的前 $k/2$ 個元素，原因在於，$A[0..k/2], B[0..k/2]$ 至多只有 $k$ 個元素，
+當 $B[1]$ 比較大的時候，對於 $A[1]$ 來說，最多只有 $A[0..k/2-1], B[0..k/2-1]$ 這些元素比他小，
+而這些元素總共有 $k - 2$ 個，表示 $A[1]$ 最好的狀況就是第 $k - 1$ 小的元素</p>
+</li>
+<li>
+<p>$A[1] \ge B[1]$
+這個狀況同理可證</p>
+</li>
+</ol>
+<p>於是我們就可以把 $k$ 縮小一半，並利用遞迴求解，至於實作和 corner case 可以看 code 理解。
+實際上我是在交出二分搜以後，參考了 C++ 執行時間在前段班的解法以後，才發現這種解法比較主流。
+查了資料理解正確性的證明以後，我反而比較喜歡這個方法，整體來說其實他比較簡單，而且實作上沒那麼多眉角。</p>
+<h4 id="不用額外分奇偶數的解法httpsleetcodecomproblemsmedian-of-two-sorted-arraysdiscuss2471very-concise-ologminmn-iterative-solution-with-detailed-explanation"><a href="https://leetcode.com/problems/median-of-two-sorted-arrays/discuss/2471/Very-concise-O(log(min(MN)))-iterative-solution-with-detailed-explanation">不用額外分奇偶數的解法</a></h4>
+<p>這個其實算是選擇性的資料。</p>
+<p>這篇主要在說，想像在原陣列裡面插入 <code>#</code> 在數字間與前後端，棍子可以擺在數字或是 <code>#</code> 上。
+當棍子擺在數字上時，數字會被分成兩個與原數字相同的數字擺在棍子左右兩側，因此就不需要針對奇偶數狀況分開討論。
+不過索引的範圍會比原先問題大上兩倍，加上還要計算後才能回去用在原本陣列上，或許不會比較快，
+但這種想法說不定在其他問題也用得上，個人建議是可以看一下的。</p>
+<h2 id="時間複雜度">時間複雜度</h2>
+<p>二分搜：顯而易見的 $\mathcal{O}(log(min(m, n)))$</p>
+<p>kth：顯而易見的 $\mathcal{O}(log(\frac{m+n}{2}))$</p>
+<h2 id="空間複雜度">空間複雜度</h2>
+<p>都是顯而易見的 $\mathcal{O}(1)$</p>
+<h2 id="程式碼">程式碼</h2>
+<p>二分搜</p>
+<pre><code class="language-C++">class Solution {
+public:
+    double findMedianSortedArrays(vector&lt;int&gt;&amp; nums1, vector&lt;int&gt;&amp; nums2) {
+        const auto m = static_cast&lt;int&gt;(nums1.size());
+        const auto n = static_cast&lt;int&gt;(nums2.size());
+        
+        if(m &gt; n)
+            return findMedianSortedArrays(nums2, nums1);
+        
+        // int is sufficient, guaranteed by 0 &lt;= m, n &lt;= 1000
+        auto first = 0;
+        auto last = m + 1;
+        const auto half_len = (m + n + 1) / 2;
+        
+        while(first &lt; last)
+        {            
+            const auto i = first + (last - first) / 2;
+            const auto j = half_len - i;
+            
+            if(i &gt; 0 &amp;&amp; nums1[i - 1] &gt; nums2[j]) {
+                last = i;
+            } else if(i &lt; m &amp;&amp; nums2[j - 1] &gt; nums1[i]) {
+                first = i + 1;
+            } else {                
+                const auto l1 = i==0 ? numeric_limits&lt;int&gt;::min() : nums1[i-1];
+                const auto l2 = j==0 ? numeric_limits&lt;int&gt;::min() : nums2[j-1];
+                const auto mleft = max(l1, l2);
+                
+                // be careful when m + n = 1
+                if((m + n) % 2 == 1)
+                    return mleft;
+                
+                const auto r1 = i==m ? numeric_limits&lt;int&gt;::max() : nums1[i];
+                const auto r2 = j==n ? numeric_limits&lt;int&gt;::max() : nums2[j];
+                const auto rmin = min(r1, r2);
+                
+                return (mleft + rmin) / 2.0;
+            }
+            
+        }
+        
+        return -1;
+    }
+};
+</code></pre>
+<p>kth</p>
+<pre><code class="language-C++">class Solution {
+public:
+    double findMedianSortedArrays(vector&lt;int&gt;&amp; nums1, vector&lt;int&gt;&amp; nums2) {
+        const auto m = nums1.size();
+        const auto n = nums2.size();
+        const auto len = m + n;
+        const auto half = (len + 1) / 2;
+        
+        if(len % 2 == 0)
+            return (get_kth(nums1.data(), m, nums2.data(), n, half) +
+                    get_kth(nums1.data(), m, nums2.data(), n, half + 1)) / 2.0;
+        else
+            return get_kth(nums1.data(), m, nums2.data(), n, half);
+    }
+    
+    double get_kth(const int* pa, const int m, const int* pb, const int n, int k)
+    {        
+        if(m == 0)
+            return pb[k - 1];
+        else if(n == 0)
+            return pa[k - 1];
+        else if(k == 1)
+            return min(pa[0], pb[0]);
+        
+        const auto npa = pa + min(k / 2, (int)m) - 1;
+        const auto npb = pb + min(k / 2, (int)n) - 1;
+        
+        if(*npa &lt; *npb) {
+            const auto shrunk_size = npa - pa + 1;
+            return get_kth(npa + 1, m - shrunk_size, pb, n, k - shrunk_size);
+        } else {
+            const auto shrunk_size = npb - pb + 1;
+            return get_kth(pa, m, npb + 1, n - shrunk_size, k - shrunk_size);
+        }
+    }
+};
+</code></pre>
     </div>
     <div class="article-footer">
 <blockquote class="mt-2x">
   <ul class="post-copyright list-unstyled">
     <li class="post-copyright-link hidden-xs">
       <strong>Permalink: </strong>
-      <a href="https://equalkirby.github.io/about/" title="About" target="_blank" rel="external">https://equalkirby.github.io/about/</a>
+      <a href="https://equalkirby.github.io/2021/03/median-of-two-sorted-arrays/" title="Median of Two Sorted Arrays" target="_blank" rel="external">https://equalkirby.github.io/2021/03/median-of-two-sorted-arrays/</a>
     </li>
     <li class="post-copyright-license">
       <strong>License: </strong>
@@ -309,10 +490,10 @@
 </div><nav class="bar bar-footer clearfix" data-stick-bottom>
     <div class="bar-inner">
         <ul class="pager pull-left">
-            <li class="next">
-                <a href="https://equalkirby.github.io/2021/01/first-post/"
-                    title="First Post"><span>Newer&nbsp;&nbsp;</span><i
-                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            <li class="prev">
+                <a href="https://equalkirby.github.io/2021/03/longest-substring-without-repeating-characters/" title="Longest Substring Without Repeating Characters"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
             </li>
             
             <li class="toggle-toc">
@@ -399,6 +580,7 @@
         hasInnerContainers: true,
     });
 </script>
+
 
   </body>
 </html>

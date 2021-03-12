@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>CC BY 4.0 CN</copyright>
-    <lastBuildDate>Thu, 04 Mar 2021 22:28:03 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 12 Mar 2021 19:54:20 +0800</lastBuildDate>
     
         <atom:link href="https://equalkirby.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Median of Two Sorted Arrays</title>
+      <link>https://equalkirby.github.io/2021/03/median-of-two-sorted-arrays/</link>
+      <pubDate>Fri, 12 Mar 2021 19:54:20 +0800</pubDate>
+      
+      <guid>https://equalkirby.github.io/2021/03/median-of-two-sorted-arrays/</guid>
+      <description>&lt;p&gt;花了好幾天的第三篇&lt;/p&gt;
+&lt;p&gt;我好像很久以前就卡這題，但也一直沒把這題放在心上去解，就這樣拖延了好幾年&amp;hellip;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Longest Substring Without Repeating Characters</title>
