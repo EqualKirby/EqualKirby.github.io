@@ -43,7 +43,7 @@
 我好像很久以前就卡這題，但也一直沒把這題放在心上去解，就這樣拖延了好幾年&hellip;">
 <meta itemprop="datePublished" content="2021-03-12T19:54:20+08:00" />
 <meta itemprop="dateModified" content="2021-03-12T19:54:20+08:00" />
-<meta itemprop="wordCount" content="2424">
+<meta itemprop="wordCount" content="2484">
 
 
 
@@ -162,7 +162,7 @@
     <h3 class="widget-title"> Categories</h3>
     <div class="widget-body">
         <ul class="category-list">
-            <li class="category-list-item"><a href="https://equalkirby.github.io/categories/leetcode/" class="category-list-link">leetcode</a><span class="category-list-count">3</span></li>
+            <li class="category-list-item"><a href="https://equalkirby.github.io/categories/leetcode/" class="category-list-link">leetcode</a><span class="category-list-count">4</span></li>
         </ul>
     </div>
 </div>
@@ -180,6 +180,16 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget-body">
         <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://equalkirby.github.io/2021/03/longest-palindromic-substring/" class="title">Longest Palindromic Substring</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-03-24 00:43:13 &#43;0800 CST" itemprop="datePublished">2021-03-24</time>
+                    </p>
+                </div>
+            </li>
             <li>
                 <div class="item-inner">
                     <p class="item-title">
@@ -262,7 +272,7 @@
   <a class="article-category-link" href="/categories/leetcode/"> LeetCode </a>
 </span>
 
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 2424 words</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 2484 words</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Time: 5 minutes </span>
       </div>
     </div>
@@ -298,7 +308,7 @@
 </ul>
 <p>這也是說明為何程式碼中的 <code>half_len</code> 裡面會有 <code>+1</code> 的緣故。</p>
 <pre><code>array:         1   2   3   4   5  
-sitck_place: _   _   _   |   _   _
+stick_place: _   _   _   |   _   _
 stick_index: 0   1   2   3   4   5
 </code></pre>
 <p>以這個例子來說，陣列裡面有五個數字，
@@ -345,14 +355,17 @@ stick_index: 0   1   2   3   4   5
 做法是去兩個陣列各自檢查其第 2 小($k / 2 = 4 / 2 = 2$)的元素，接著我們有以下兩種 case 討論(zero-based index)：</p>
 <ol>
 <li>
-<p>$A[1] &lt; B[1]$
-這表示我們可以捨去 $A$ 的前 $k/2$ 個元素，原因在於，$A[0..k/2], B[0..k/2]$ 至多只有 $k$ 個元素，
-當 $B[1]$ 比較大的時候，對於 $A[1]$ 來說，最多只有 $A[0..k/2-1], B[0..k/2-1]$ 這些元素比他小，
+<p>$A[1] &lt; B[1]$</p>
+<p>這表示我們可以捨去 $A$ 的前 $k/2$ 個元素，原因在於，$A[0..k/2], B[0..k/2]$ 至多只有 $k$ 個元素，
+當 $B[1]&gt;A[1]$ 的時候，對於 $A[1]$ 來說，最多只有 $A[0..k/2-1], B[0..k/2-1]$ 這些元素比他小，
 而這些元素總共有 $k - 2$ 個，表示 $A[1]$ 最好的狀況就是第 $k - 1$ 小的元素</p>
+<blockquote>
+<p>之所以說是至多 $k$ 個元素，是因為當 $k/2$ 超過陣列長度的時候，是取最後一個元素來比較大小，因此可能不會有到 $k$ 個元素</p>
+</blockquote>
 </li>
 <li>
-<p>$A[1] \ge B[1]$
-這個狀況同理可證</p>
+<p>$A[1] \ge B[1]$</p>
+<p>這個狀況同理可證，捨去 $B$ 的前 $k/2$ 個元素</p>
 </li>
 </ol>
 <p>於是我們就可以把 $k$ 縮小一半，並利用遞迴求解，至於實作和 corner case 可以看 code 理解。
@@ -494,6 +507,11 @@ public:
                 <a href="https://equalkirby.github.io/2021/03/longest-substring-without-repeating-characters/" title="Longest Substring Without Repeating Characters"><i
                         class="icon icon-angle-left"
                         aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
+            </li>
+            <li class="next">
+                <a href="https://equalkirby.github.io/2021/03/longest-palindromic-substring/"
+                    title="Longest Palindromic Substring"><span>Newer&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
             </li>
             
             <li class="toggle-toc">

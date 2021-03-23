@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>Longest Palindromic Substring</title>
+      <link>https://equalkirby.github.io/2021/03/longest-palindromic-substring/</link>
+      <pubDate>Wed, 24 Mar 2021 00:43:13 +0800</pubDate>
+      
+      <guid>https://equalkirby.github.io/2021/03/longest-palindromic-substring/</guid>
+      <description>&lt;p&gt;花了超過一個禮拜的第四篇&lt;/p&gt;
+&lt;p&gt;這題我前後大概嘗試了三、四種解法，也有一些收穫想說可以分享一下&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Median of Two Sorted Arrays</title>
       <link>https://equalkirby.github.io/2021/03/median-of-two-sorted-arrays/</link>
       <pubDate>Fri, 12 Mar 2021 19:54:20 +0800</pubDate>

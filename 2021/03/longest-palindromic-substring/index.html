@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+        Longest Palindromic Substring - EqualKirby&#39;s Note
+      </title>
+        <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    
+    <meta name="theme-color" content="#000000" />
+    
+    <meta http-equiv="window-target" content="_top" />
+    
+    
+    <meta name="description" content="花了超過一個禮拜的第四篇
+這題我前後大概嘗試了三、四種解法，也有一些收穫想說可以分享一下
+" />
+    <meta name="generator" content="Hugo 0.80.0 with theme pure" />
+    <title>Longest Palindromic Substring - EqualKirby&#39;s Note</title>
+    
+    
+    <link rel="stylesheet" href="https://equalkirby.github.io/css/style.min.5743fa7b2206cb1eb1d7532cda60d1ebf1e3ae4aac4077fc182a92c911e04e02.css">
+    
+    <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+    <meta property="og:title" content="Longest Palindromic Substring" />
+<meta property="og:description" content="花了超過一個禮拜的第四篇
+這題我前後大概嘗試了三、四種解法，也有一些收穫想說可以分享一下" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://equalkirby.github.io/2021/03/longest-palindromic-substring/" />
+<meta property="article:published_time" content="2021-03-24T00:43:13+08:00" />
+<meta property="article:modified_time" content="2021-03-24T00:43:13+08:00" />
+<meta itemprop="name" content="Longest Palindromic Substring">
+<meta itemprop="description" content="花了超過一個禮拜的第四篇
+這題我前後大概嘗試了三、四種解法，也有一些收穫想說可以分享一下">
+<meta itemprop="datePublished" content="2021-03-24T00:43:13+08:00" />
+<meta itemprop="dateModified" content="2021-03-24T00:43:13+08:00" />
+<meta itemprop="wordCount" content="3230">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Longest Palindromic Substring"/>
+<meta name="twitter:description" content="花了超過一個禮拜的第四篇
+這題我前後大概嘗試了三、四種解法，也有一些收穫想說可以分享一下"/>
+
+    <!--[if lte IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+      <![endif]-->
+
+    <!--[if lt IE 9]>
+        <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+      <![endif]-->
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/equalkirby" target="_blank">
+            <img class="img-circle img-rotate" src="https://equalkirby.github.io/kirby.png" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">EqualKirby</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md"></h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Pop Star</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="Type something..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>Place Holder</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> Categories</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+            <li class="category-list-item"><a href="https://equalkirby.github.io/categories/leetcode/" class="category-list-link">leetcode</a><span class="category-list-count">4</span></li>
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> Tags</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://equalkirby.github.io/2021/03/longest-palindromic-substring/" class="title">Longest Palindromic Substring</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-03-24 00:43:13 &#43;0800 CST" itemprop="datePublished">2021-03-24</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://equalkirby.github.io/2021/03/median-of-two-sorted-arrays/" class="title">Median of Two Sorted Arrays</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-03-12 19:54:20 &#43;0800 CST" itemprop="datePublished">2021-03-12</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://equalkirby.github.io/2021/03/longest-substring-without-repeating-characters/" class="title">Longest Substring Without Repeating Characters</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-03-04 22:28:03 &#43;0800 CST" itemprop="datePublished">2021-03-04</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://equalkirby.github.io/2021/03/add-two-numbers/" class="title">Add Two Numbers</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-03-04 21:28:10 &#43;0800 CST" itemprop="datePublished">2021-03-04</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://equalkirby.github.io/2021/01/first-post/" class="title">First Post</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-01-21 20:15:07 &#43;0800 CST" itemprop="datePublished">2021-01-21</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">Catalogue</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2021/03/longest-palindromic-substring/"
+    >Longest Palindromic Substring</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://equalkirby.github.io/2021/03/longest-palindromic-substring/" class="article-date">
+  <time datetime="2021-03-24 00:43:13 &#43;0800 CST" itemprop="datePublished">2021-03-24</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/leetcode/"> LeetCode </a>
+</span>
+
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 3230 words</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Time: 7 minutes </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p>花了超過一個禮拜的第四篇</p>
+<p>這題我前後大概嘗試了三、四種解法，也有一些收穫想說可以分享一下</p>
+<h2 id="題目連結httpsleetcodecomproblemslongest-palindromic-substring"><a href="https://leetcode.com/problems/longest-palindromic-substring/">題目連結</a></h2>
+<h2 id="想法">想法</h2>
+<p>這題並不是太難，不要寫出太爛的方法基本上都可以通過。
+如果不知道怎麼解的話，我推薦可以直接參考解答裡面的 <code>Approach 4: Expand Around Center</code>，
+前面幾種解法我個人認為是來亂的，動態規劃既沒在時間上有優勢，空間複雜度還輸不少，就別浪費腦力去理解了。</p>
+<p>對於這種選定回文中央往左右檢查的方法，需要注意的部分就是：當中央是在兩個字母中間，譬如 <code>abba</code> 的正中心，
+索引的處理方式與 <code>aba</code> 並不一樣，可以看到他提供的實作是額外寫一個 <code>expandAroundCenter</code>，並使 <code>left</code> 和 <code>right</code> 分開傳，
+藉此在每個索引位置時，各自檢查一次 <code>left = right = i</code> 與 <code>left = i, right = i + 1</code>；前者對應 <code>aba</code>，後者對應 <code>abba</code> 的狀況。</p>
+<hr>
+<h4 id="插入假想-">插入假想 <code>#</code></h4>
+<p>而我在上一篇 <a href="../../../2021/03/median-of-two-sorted-arrays/">Median of Two Sorted Arrays</a> 中，提到有個不分奇偶數的解法，</p>
+<p>簡單來說，為了避免處理像是 <code>abba</code> 這種回文的中心不在字串裡面的狀況，我們可以想像插入一個沒有出現在字串裡面的字元 <code>#</code> 在所有間隙(彷彿數字間能插棍子的位置)，
+使其變成 <code>#a#b#b#a#</code>，這樣子當中心點在兩個 <code>b</code> 中間的 <code>#</code> 時，就可以很自然的往左右檢查，不需要有特別處理。</p>
+<p>而且還可以順便觀察一件有趣的事情，譬如這個例子：</p>
+<pre><code>string: #  a  #  b  #  a  #  a  #  b  #  a  #
+index:  0  1  2  3  4  5  6  7  8  9 10 11 12
+        &lt;--------|--------&gt;
+           a     b     a                       len = 6 - 3 = 3
+
+        &lt;-----------------|-----------------&gt;
+           a     b     a     a     b     a     len = 12 - 6 = 6
+</code></pre>
+<p>示意性地，我標了裡面的兩個回文，會發現把回文最右端的索引值減去中央的索引值，得到的值會與真正原先的字串長度相同，我們可以把這個距離稱為半徑(半開)。</p>
+<p>另外，實際上我們也不用真的插入 <code>#</code>，雖然丟到網路上查詢還真的不少人會這樣寫，但這其實可以透過索引的計算來完成。</p>
+<pre><code>string:            (#  a)  (#  b)  (#  a)  (#  a)  (#  b)  (#  a)  (#   )
+extended index  :   0  1    2  3    4  5    6  7    8  9    10 11   12
+(ext. index) / 2:   0       1       2       3       4       5       6
+
+                               i
+                                            j
+</code></pre>
+<p>這邊有兩種狀況：</p>
+<ul>
+<li>
+<p>對於索引 $i$ 是指向 <code>字母</code> 時：</p>
+<p>這是對應回文是 <code>aba</code> 時，我們會希望起先檢查回文時，<code>left = right</code>，也就是左邊要拿到這一組括號的字母，右邊也是拿到這組括號的字母。</p>
+</li>
+<li>
+<p>對於索引 $j$ 是指向 <code>#</code> 時：</p>
+<p>這是對應回文是 <code>abaaba</code> 時，我們會希望起先檢查回文時，<code>left + 1 = right</code>，也就是左邊要拿到上一組括號的字母，右邊是拿到這組括號的字母。</p>
+</li>
+</ul>
+<p>可以發現，這兩個規則統整下來 <code>left = (index - 1) / 2</code> 和 <code>right = index / 2</code> 可以滿足上述兩個狀況。</p>
+<p>於是我試著寫了一下，結果發現速度好像不是很理想，大概在中間上游一點而已。
+我就去看了一下前面跑得不錯快的 sample code，發現其實有個做法不難，跑得又莫名的快。</p>
+<hr>
+<h4 id="跳過中央重複字元的-expand-around-center">跳過中央重複字元的 Expand Around Center</h4>
+<p>那就是，不需要將字串想像成有插入 <code>#</code> 的狀況下去算索引，在原本的字串索引上計算即可，那這樣我們要怎麼處理 <code>abba</code> 這種回文呢？</p>
+<p>其實答案很簡單，就是讓 <code>right</code> 指向最右邊的 <code>b</code> 就好，這樣不論中間有奇數個還是偶數個相同字元，最後 <code>left</code> 與 <code>right</code> 都會在對的位置，並藉此各自往左右搜索即可。</p>
+<hr>
+<h4 id="manachers-algorithm">Manacher&rsquo;s Algorithm</h4>
+<p>最後，其實經過查詢，會發現此題是有時間複雜度為 $\mathcal{O}(n)$ 的解法，該演算法為 <code>Manacher's Algorithm</code>。
+這演算法網路上有不少介紹的資源，我自己沒覺得有哪一篇寫得特別好的，就請大家自己多搜尋一下吧。
+簡單來說，回文會有以中心點為鏡像的特性，所以我們可以將前面所有計算過的，
+以該字元為中心，最長之回文的半徑存起來，後面的計算是可以重複利用這些結果的。</p>
+<blockquote>
+<p>你說如 <code>abba</code> 的中心點在哪？就是利用假想插入 <code>#</code> 這招就好了，不然我也不用浪費這麼多篇幅講解XD</p>
+</blockquote>
+<p>假設我們在計算以索引 <code>i</code> 所指向的字元為中心的當下，已記錄了先前所有計算過的回文中，
+右端最接近尾端的大回文(這樣才越容易覆蓋到後面要計算的索引)，那可以針對大回文有沒有覆蓋到 <code>i</code> 做討論：</p>
+<ul>
+<li>
+<p>如果該大回文沒有覆蓋此字元，表示你能用的資訊用完了，乖乖地從現在的中心往左右找，並將其作為新的大回文，記錄其右端(因為右端一定會比舊的大回文接近尾端，不如就會被覆蓋到)。</p>
+<pre><code class="language-text">index: 0  1  2  3  4  5  6  7  8  9 10 11 12
+       &lt;-----------|-----------&gt;              // large palindrome
+                                  i
+                            ?-----|-----?
+</code></pre>
+</li>
+<li>
+<p>如果該大回文覆蓋此字元，那麼有以下幾種狀況：</p>
+<h5 id="case-1-鏡像回文在大回文之內邊界不會相等">Case 1: 鏡像回文在大回文之內(邊界不會相等)</h5>
+<pre><code>index: 0  1  2  3  4  5  6  7  8  9 10 11 12
+       &lt;-----------------|-----------------&gt;  // large palindrome
+          &lt;-----|-----&gt;
+                                  i
+                            &lt;-----|-----&gt;    
+</code></pre>
+<p>此時，我們把 <code>i</code> 對著該回文的中心做鏡像，得到 $3$，而我們知道當在索引 $3$ 的小回文的左端不超過大回文的左端時，
+索引 $9$ 的小回文應該與在索引 $3$ 的小回文一模一樣，因此有相同的半徑。
+若否，那麼要不索引 $3$ 的小回文不是最長的，要不大回文就不是回文，兩種狀況都會導致矛盾。</p>
+<h5 id="case-2-鏡像回文超出大回文">Case 2: 鏡像回文超出大回文</h5>
+<pre><code>index: 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14
+                   &lt;-----------|-----------&gt;        // large palindrome
+                &lt;-----|-----&gt;
+                                        i
+                                     &lt;--|--&gt;
+
+                &lt;--------------|--------------&gt;     // If not, the big palindrome should be like this. Contradiction.
+</code></pre>
+<p>此時，我們把 <code>i</code> 對著該回文的中心做鏡像，得到 $5$，而我們知道當在索引 $5$ 的小回文的左端超過大回文的左端時，
+索引 $11$ 的小回文右端最多僅到大回文的右端，並不會超過。
+若否(超出大回文右端)，表示對 $11$ 往右延伸的字元，會與 $5$ 往左延伸的字元相同，那這樣的話，大回文就不是以該字元為中心的最長回文，導致矛盾。</p>
+<h5 id="case-3-鏡像回文邊界剛好切齊大回文邊界">Case 3: 鏡像回文邊界剛好切齊大回文邊界</h5>
+<pre><code>index: 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14
+                   &lt;-----------|-----------&gt;        // large palindrome
+                   &lt;--|--&gt;
+                                        i
+                              ?------&lt;--|--&gt;------?       
+</code></pre>
+<p>此時，我們把 <code>i</code> 對著該回文的中心做鏡像，得到 $5$，而我們知道當在索引 $11$ 的小回文的左端切齊大回文的左端時，
+索引 $11$ 的小回文右端至少切齊大回文的右端，但會不會超過是需要檢查的。
+為何不會僅僅是切齊而已？以此例來說，這只代表 $str[3] \ne str[7]$，但這不代表鏡像過去以後，會得到 $str[9] \ne str[13]$，因為這個資訊並沒有辦法透過大回文得到(已經超出範圍)。
+於是，這種狀況我們會從 <code>left = 10</code> 和 <code>right = 12</code> 開始往左右進行檢查，如果檢查出新的回文，其右端自然超過原先大回文的右端，故成為新的大回文。</p>
+</li>
+</ul>
+<hr>
+<p>至此，怎麼更新大回文和填入裡面小回文的流程已經大致講完，如果不清楚的部分，我推薦可以參考程式碼。</p>
+<p>如果主要概念不太理解，可以先看 <a href="https://leetcode.com/problems/longest-palindromic-substring/discuss/3337/Manacher-algorithm-in-Python-O(n)">Python</a> 版的，這算是流程蠻好理解的。</p>
+<p>本篇的實作主要參考此 <a href="https://leetcode.com/problems/longest-palindromic-substring/discuss/213899/20-line-C%2B%2B-Manacher-Algorithm-O(n)-Solution-without-inserting-a-special-char">C++</a> 版的，
+這程式真的挺猛的，裡面其實利用很多性質簡化了不少計算，但大概因為沒什麼註解所以乏人問津吧XD
+有的不容易看出的性質我有註解在本文最後的程式碼裡，其中那個提早結束的 <code>i &lt; 2 * size - l</code> 真的也是很競程的寫法呢(那是 <code>l</code> 不是 $1$)。</p>
+<blockquote>
+<p>推薦閱讀順序是上面的 Python 版，接著是本文附上的程式碼，最後是上面的 C++ 版。</p>
+</blockquote>
+<h2 id="時間複雜度">時間複雜度</h2>
+<p>從中央往左右找：顯而易見的 $\mathcal{O}(n^2)$</p>
+<p>Manacher&rsquo;s Algorithm：$\mathcal{O}(n)$</p>
+<blockquote>
+<p>在執行的時候，實際上大回文的右端是單調遞增的，所有迴圈都是用在大回文右端不夠提供資訊的狀況故想辦法把他往右移。</p>
+</blockquote>
+<h2 id="空間複雜度">空間複雜度</h2>
+<p>從中央往左右找：顯而易見的 $\mathcal{O}(1)$</p>
+<p>Manacher&rsquo;s Algorithm：$\mathcal{O}(n)$</p>
+<h2 id="程式碼">程式碼</h2>
+<p>從中央往左右檢查，假想插入 <code>#</code> 去計算索引的解法：</p>
+<pre><code class="language-C++">class Solution {
+public:
+    string longestPalindrome(string s) {
+        
+        // the pair (len, begin) whose len is the largest among all palindromes
+        auto pair = make_tuple(0, 0);
+        
+        for(auto center = 0; center &lt; s.size()*2 + 1; center++) {
+            auto len = 0;
+            for(;; len++) {
+                const auto l = center - len - 1;
+                const auto r = center + len;                
+                if(l &lt; 0 || r &gt;= s.size()*2 + 1 || s[l/2] != s[r/2])
+                    break;
+            }
+            
+            pair = max(pair, make_tuple(len, (center - len) / 2));
+        }
+        
+        return s.substr(get&lt;1&gt;(pair), get&lt;0&gt;(pair));
+    }
+};
+</code></pre>
+<p>從中央往左右檢查，跳過重複字元的解法：</p>
+<pre><code class="language-C++">class Solution {
+public:
+    string longestPalindrome(string s) {
+        
+        // the pair (len, begin) whose len is the largest among all palindromes
+        auto pair = make_tuple(0, 0);
+        
+        for(auto center = 0; center &lt; s.size(); center++) {
+            auto l = center;
+            auto r = center;
+            
+            while(l &gt;= 0 &amp;&amp; r &lt; s.size() - 1 &amp;&amp; s[l] == s[r + 1])
+                r++;
+            
+            while(l &gt; 0 &amp;&amp; r &lt; s.size() - 1 &amp;&amp; s[l - 1] == s[r + 1])
+                l--, r++;
+            
+            pair = max(pair, make_tuple(r - l + 1, l));
+        }
+        
+        return s.substr(get&lt;1&gt;(pair), get&lt;0&gt;(pair));
+    }
+};
+</code></pre>
+<p>Manacher&rsquo;s Algorithm：</p>
+<pre><code class="language-C++">class Solution {
+public:
+    string longestPalindrome(string s) {
+        vector&lt;int&gt; rads(s.size() * 2 + 1);
+        auto center = 0;
+        auto right = 0;
+        auto max_beg = 1;
+        auto max_rad = 1;
+
+        // In fact, we know that the following must be true:
+        //     rads[0] = 0, rads[2 * s.size()] = 0
+        //     rads[1] = 1, rads[2 * s.size() - 1] = 1
+        //
+        // Originally, i = [0, 2 * s.size()]
+        // But due to those known zero values(vector's default values), we only need to calculate i = [1, 2 * s.size() - 1].
+        //
+        // Also, since rads[1] = 1 and we can return arbitrary string when there are multiple solutions,
+        // we don't need to calculate rads[2 * s.size() - 1], and reduce i to [1, 2 * s.size() - 1).
+        //
+        // Furthermore, for the max_rad computed so far, when index = s.size() * 2 - max_rad,
+        // the largest radius it can acheive is max_rad, which is the same as max_rad, and thus we don't need to compute it.
+        //
+        // So, the range for i is [1, s.size() * 2 - max_rad).
+        // In fact, you can start from i = 2, but some rads[] would be wrong(although it won't affect the largest radius)
+
+        for (auto i = 1; i &lt; s.size() * 2 - max_rad; i++) {
+            auto rad = (i &lt;= right) ? min(right - i, rads[2 * center - i]) : 0;
+
+            auto l = (i - rad - 1) / 2;
+            auto r = (i + rad) / 2;
+
+            if (l == r)
+                rad++, l--, r++;
+
+            while (l &gt;= 0 &amp;&amp; r &lt; s.size() &amp;&amp; s[l] == s[r])
+                rad += 2, l--, r++;            
+
+            if (i + rad &gt; right) {
+                center = i;
+                right = i + rad;
+            }
+
+            if (rad &gt; max_rad) {
+                max_beg = i - rad;
+                max_rad = rad;
+            }
+
+            rads[i] = rad;
+        }
+
+        // for (auto i = 0; i &lt; s.size() * 2 + 1; i++) {
+        //     if (i % 2 == 0)
+        //         cout &lt;&lt; &quot;# &quot;;
+        //     else
+        //         cout &lt;&lt; s[i / 2] &lt;&lt; &quot; &quot;;
+        // }
+
+        // cout &lt;&lt; endl;
+
+        // for (auto i = 0; i &lt; s.size() * 2 + 1; i++) {
+        //     cout &lt;&lt; rads[i] &lt;&lt; &quot; &quot;;
+        // }
+
+        // cout &lt;&lt; endl;
+
+        return s.substr(max_beg / 2, max_rad);
+    }
+};
+</code></pre>
+<h2 id="後記">後記</h2>
+<p>這篇寫了三個鐘頭救命，我的功課呢？</p>
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>Permalink: </strong>
+      <a href="https://equalkirby.github.io/2021/03/longest-palindromic-substring/" title="Longest Palindromic Substring" target="_blank" rel="external">https://equalkirby.github.io/2021/03/longest-palindromic-substring/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License: </strong>
+        <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/equalkirby" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://equalkirby.github.io/kirby.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/equalkirby" target="_blank"><span class="text-dark">EqualKirby</span><small class="ml-1x"></small></a></h3>
+        <div>就是一隻等號卡比</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+    </div>
+  </article>
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://equalkirby.github.io/2021/03/median-of-two-sorted-arrays/" title="Median of Two Sorted Arrays"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="Catalogue" role="button">
+                    <span>[&nbsp;</span><span>Catalogue</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bar-right">
+        </div>
+    </div>
+</nav>
+
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+  <div class="copyright">
+    &copy;&lt;nil&gt;  -
+    2021
+    <div class="publishby">
+        Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://equalkirby.github.io/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
+<script src="https://equalkirby.github.io/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            ROOT_URL: 'https:\/\/equalkirby.github.io\/',
+            CONTENT_URL: 'https:\/\/equalkirby.github.io\/\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://equalkirby.github.io/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+
+  </body>
+</html>
