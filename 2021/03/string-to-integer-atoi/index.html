@@ -2,7 +2,8 @@
 <html lang="en">
   <head>
     <title>
-        EqualKirby&#39;s Note</title>
+        String to Integer (atoi) - EqualKirby&#39;s Note
+      </title>
         <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport"
@@ -19,26 +20,34 @@
     <meta http-equiv="window-target" content="_top" />
     
     
-    
+    <meta name="description" content="水題，但還是有可以注意的點
+" />
     <meta name="generator" content="Hugo 0.80.0 with theme pure" />
-    <title>EqualKirby&#39;s Note</title>
+    <title>String to Integer (atoi) - EqualKirby&#39;s Note</title>
     
-    <link rel="alternate" type="application/rss+xml" href="https://equalkirby.github.io/tags/index.xml" title="EqualKirby's Note" />
     
     <link rel="stylesheet" href="https://equalkirby.github.io/css/style.min.5743fa7b2206cb1eb1d7532cda60d1ebf1e3ae4aac4077fc182a92c911e04e02.css">
     
     <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
-    <meta property="og:title" content="Tags" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://equalkirby.github.io/tags/" />
+    <meta property="og:title" content="String to Integer (atoi)" />
+<meta property="og:description" content="水題，但還是有可以注意的點" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://equalkirby.github.io/2021/03/string-to-integer-atoi/" />
+<meta property="article:published_time" content="2021-03-25T19:04:03+08:00" />
+<meta property="article:modified_time" content="2021-03-25T19:04:03+08:00" />
+<meta itemprop="name" content="String to Integer (atoi)">
+<meta itemprop="description" content="水題，但還是有可以注意的點">
+<meta itemprop="datePublished" content="2021-03-25T19:04:03+08:00" />
+<meta itemprop="dateModified" content="2021-03-25T19:04:03+08:00" />
+<meta itemprop="wordCount" content="328">
 
-<meta itemprop="name" content="Tags">
-<meta itemprop="description" content="">
+
+
+<meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Tags"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="String to Integer (atoi)"/>
+<meta name="twitter:description" content="水題，但還是有可以注意的點"/>
 
     <!--[if lte IE 9]>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -225,21 +234,146 @@
 
     
     
-<main class="main" role="main">
-    <article class="article article-tags post-type-list" itemscope="">
-        <header class="article-header">
-            <h1 itemprop="name" class="hidden-xs">Tags</h1>
-            <p class="text-muted hidden-xs">Total 0 tags</p>
-            <nav role="navigation" id="nav-main" class="okayNav">
-                <ul>
-                    <li><a href="https://equalkirby.github.io/tags">All</a></li>
-                </ul>
-            </nav>
-        </header>
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">Catalogue</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2021/03/string-to-integer-atoi/"
+    >String to Integer (atoi)</a
+  >
+</h1>
+
+      <div class="article-meta">
         
-        <div class="article-body">
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://equalkirby.github.io/2021/03/string-to-integer-atoi/" class="article-date">
+  <time datetime="2021-03-25 19:04:03 &#43;0800 CST" itemprop="datePublished">2021-03-25</time>
+</a>
+</span>
+
+
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 328 words</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Time: 1 minutes </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p>水題，但還是有可以注意的點</p>
+<h2 id="題目連結httpsleetcodecomproblemsstring-to-integer-atoi"><a href="https://leetcode.com/problems/string-to-integer-atoi/">題目連結</a></h2>
+<h2 id="想法">想法</h2>
+<p>這題目重點在越界檢查的部分和讀懂題目本身。</p>
+<p>在<a href="../../../2021/03/reverse-integer/">上一篇</a>有討論了怎麼檢查越界的這件事，這題與上一題不同的地方在於越界以後用該方向的極值做為表示。
+譬如超過最大可以表達的正數就用最大值表示，低於最小可以表達的負數就用最小值表示。</p>
+<p>我個人這題的實作就有點隨便，沒有特地把程式碼弄得精巧一點。
+原本我想把 <code>abs</code> 替換成 <code>* sign</code>，但跟上一題有相同的狀況，如果 <code>limit</code> 是最小值然後 <code>digit</code> 是 $0$ 的狀況下就會爆開。</p>
+<h2 id="時間複雜度">時間複雜度</h2>
+<p>顯而易見的 $\mathcal{O}(n)$</p>
+<h2 id="空間複雜度">空間複雜度</h2>
+<p>顯而易見的 $\mathcal{O}(1)$</p>
+<h2 id="程式碼">程式碼</h2>
+<pre><code class="language-C++">class Solution {
+public:
+    int myAtoi(string s) {
+        auto result = 0;
+        auto sign = 1;
+        auto limit = numeric_limits&lt;int&gt;::max();
+
+        auto i = 0;
+        while (i &lt; s.size() &amp;&amp; s[i] == ' ')
+            i++;
+
+        if (i &lt; s.size() &amp;&amp; (s[i] == '+' || s[i] == '-')) {
+            if (s[i] == '-') {
+                sign = -1;
+                limit = numeric_limits&lt;int&gt;::min();
+            }
+            i++;
+        }
+
+        while (i &lt; s.size() &amp;&amp; isdigit(s[i])) {
+            auto digit = (s[i] - '0') * sign;
+            if (abs((limit - digit) / 10) &lt; abs(result))
+                return limit;
+
+            result *= 10;
+            result += digit;
+            i++;
+        }
+
+        return result;
+    }
+};
+</code></pre>
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>Permalink: </strong>
+      <a href="https://equalkirby.github.io/2021/03/string-to-integer-atoi/" title="String to Integer (atoi)" target="_blank" rel="external">https://equalkirby.github.io/2021/03/string-to-integer-atoi/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License: </strong>
+        <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/equalkirby" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://equalkirby.github.io/kirby.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/equalkirby" target="_blank"><span class="text-dark">EqualKirby</span><small class="ml-1x"></small></a></h3>
+        <div>就是一隻等號卡比</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+    </div>
+  </article>
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://equalkirby.github.io/2021/03/reverse-integer/" title="Reverse Integer"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="Catalogue" role="button">
+                    <span>[&nbsp;</span><span>Catalogue</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bar-right">
         </div>
-    </article>
+    </div>
+</nav>
+
+
 </main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
   <div class="copyright">
     &copy;&lt;nil&gt;  -
@@ -308,6 +442,7 @@
         hasInnerContainers: true,
     });
 </script>
+
 
   </body>
 </html>
